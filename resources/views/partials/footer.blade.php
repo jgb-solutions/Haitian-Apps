@@ -3,30 +3,30 @@
 		<div class="row no-mb">
 			<div class="col s12">
 				<p class="center-align grey-text">
-					Let's connect \_(0_o)_/ <br><br>
+					Follow Us on Social Media<br><br>
 					<a
-						href="https://github.com/{{ config('site.github') }}"
+						href="{{ config('site.social.github') }}"
 						target="blank"
 						class="btn-floating blue">
 						<i class="fa fa-github fa-fw"></i>
 					</a>
-					&nbsp;
+				{{-- 	&nbsp;
 					<a
 						href="https://twitter.com/{{ config('site.twitter') }}"
 						target="blank"
 						class="btn-floating blue">
 						<i class="fa fa-twitter fa-fw"></i>
-					</a>
+					</a> --}}
 					&nbsp;
 					<a
-						href="https://facebook.com/{{ config('site.facebook') }}"
+						href="{{ config('site.social.facebook') }}"
 						target="blank"
 						class="btn-floating blue">
 						<i class="fa fa-facebook fa-fw"></i>
 					</a>
 				</p>
 				<p class="center-align grey-text">
-					&copy; {{ date('Y') }} {{ config('site.name') }}<br>
+					&copy; {{ date('Y') }} {{ config('app.name') }} | Site by <a href="https://jgb.solutions" target="_blank">JGB Solutions</a>
 				</p>
 			</div>
 		</div>

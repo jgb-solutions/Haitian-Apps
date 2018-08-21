@@ -7,11 +7,9 @@
                 <i class="material-icons">menu</i>
             </a>
             <ul class="right hide-on-med-and-down">
-                {{-- {% include partials/menu-links.html %} --}}
                 @include('partials.menu-links')
             </ul>
             <ul id="mobile-menu" class="sidenav grey darken-4">
-                {{-- {% include partials/menu-links.html %} --}}
                 @include('partials.menu-links')
             </ul>
         </div>

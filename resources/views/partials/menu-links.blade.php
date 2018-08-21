@@ -1,4 +1,4 @@
-<li>
+<li class="active">
 	<a href="/" class="white-text">
 		<i class="material-icons left white-text">home</i>Home
 	</a>

@@ -38,6 +38,12 @@ $(document).ready(function() {
   //      event.preventDefault();
   //  });
   // });
+  //
+
+  // sidenav
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
 
   // Closes the Responsive Menu on Menu Item Click
   $('.navbar-collapse ul li a').click(function() {
@@ -46,9 +52,15 @@ $(document).ready(function() {
       }
   });
 
-  // slider
+  // carousel
   $('.carousel.carousel-slider').carousel({
   fullWidth: true,
   indicators: true
 });
+// slider
+ $(document).ready(function(){
+    $('.slider').slider();
+  });
+
+
 </script>

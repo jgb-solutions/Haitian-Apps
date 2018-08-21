@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="section no-mb" id="services">
+<section class="section">
     <div class="container">
         <div class="row">
-            <div class="col m8 offset-m2 center">
-                <h2>Intro</h2>
+            <div class="col m12">
+                <h2>{{$title}}</h2>
                 <div class="text-flow">
                     <p>
                         More than 5 years of experience building for the web and the mobile platforms

@@ -2,7 +2,10 @@
 
 Auth::routes();
 
-Route::get('/{page?}', 'PagesController');
+Route::get('/', 'PagesController@home');
+Route::get('/categories', 'PagesController@categories');
+Route::get('/about', 'PagesController@about');
+Route::get('/contact', 'PagesController@contact');
 
 // works
 Route::get('/works/{team}', 'WorksController@show')->name('works.show');
@@ -10,7 +13,7 @@ Route::get('/works', 'WorksController@index')->name('works.index');
 
 // categories
 Route::get('/categories/{team}', 'AdminController@categories_show')->name('categories.show');
-Route::get('/categories', 'AdminController@categories_index')->name('categories.index');
+// Route::get('/categories', 'AdminController@categories_index')->name('categories.index');
 
 // admin stuff
 Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function() {

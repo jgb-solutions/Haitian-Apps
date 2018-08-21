@@ -54,7 +54,7 @@
 
     <!--Import materialize.css-->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/summernote-bs4.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/summernote-bs4.css') }}" rel="stylesheet"> --}}
 </head>
 <body>
     @include('partials.navigation')
