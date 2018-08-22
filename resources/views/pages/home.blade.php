@@ -6,28 +6,28 @@
   <div class="slider">
     <ul class="slides">
       <li>
-        <img src="https://picsum.photos/580/250/?random"> <!-- random image -->
+        <img src="https://picsum.photos/580/250/?image=900"> <!-- random image -->
         <div class="caption center-align">
           <h3>This is our big Tagline!</h3>
           <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
         </div>
       </li>
       <li>
-        <img src="https://picsum.photos/580/250/?random"> <!-- random image -->
+        <img src="https://picsum.photos/580/250/?image=900"> <!-- random image -->
         <div class="caption left-align">
           <h3>Left Aligned Caption</h3>
           <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
         </div>
       </li>
       <li>
-        <img src="https://picsum.photos/580/250/?random"> <!-- random image -->
+        <img src="https://picsum.photos/580/250/?image=900"> <!-- random image -->
         <div class="caption right-align">
           <h3>Right Aligned Caption</h3>
           <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
         </div>
       </li>
       <li>
-        <img src="https://picsum.photos/580/250/?random"> <!-- random image -->
+        <img src="https://picsum.photos/580/250/?image=900"> <!-- random image -->
         <div class="caption center-align">
           <h3>This is our big Tagline!</h3>
           <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
@@ -42,11 +42,11 @@
     <div class="parallax"><img src="/assets/images/parallax-2.jpg"></div>
  </div> -->
 {{-- {% include work.html %} --}}
-<section id="work" class="section blue white-text">
+<section class="section blue white-text">
     <div class="container">
         <div class="row">
             <div class="col m12">
-               <h2 class="center">Latest Products</h2>
+               <h3 class="center">Latest Products</h3>
                     <div class="row">
                         <div class="col m4">
                            @include('partials.card')

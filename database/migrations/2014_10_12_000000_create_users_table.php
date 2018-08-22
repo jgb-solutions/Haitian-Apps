@@ -22,6 +22,21 @@ class CreateUsersTable extends Migration
             $table->string('phone', 10)->nullable();
             $table->rememberToken();
             $table->timestamps();
+
+            $table->increments('id');
+            $table->string('name');
+            $table->string('email', 60)->unique()->nullable();
+            $table->string('password', 60)->nullable();
+            $table->string('avatar')->nullable();
+            $table->string('facebook_id', 16)->unique()->nullable();
+            $table->string('facebook_link')->nullable();
+            $table->string('telephone', 20)->nullable();
+            $table->enum('type', ['artist', 'user'])->default('user');
+            $table->boolean('active')->default(false);
+            $table->string('password_reset_code')->nullable();
+            $table->boolean('first_login')->default(true);
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

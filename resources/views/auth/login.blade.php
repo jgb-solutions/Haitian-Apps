@@ -1,14 +1,21 @@
 @extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+@section('navbar')@endsection
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+@section('content')
+<section class="section blue white-text pt_30">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m6 offset-m3">
+                <br>
+                <br>
+              <div class="card darken-1 center-align">
+                <div class="card-content black-text">
+                    <h3>
+                        <i class="material-icons large">people</i> <br>
+                        Social Login
+                    </h3>
+                 {{--  <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -51,19 +58,32 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn blue btn-primary">
                                     {{ __('Login') }}
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <a class="btn blue btn-link" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
                             </div>
                         </div>
-                    </form>
+                    </form> --}}
+                    <div class="social-buttons">
+                        <a class="waves-effect waves-light btn-large blue darken-4" href="{{route('auth.provider', 'facebook')}}">
+                            <i class="fa fa-facebook"></i> Facebook
+                        </a>
+                        <a class="waves-effect waves-light btn-large red darken-1" href="{{route('auth.provider', 'google')}}">
+                            <i class="fa fa-google-plus"></i> Google+
+                        </a>
+                    </div>
+                    <br>
+                    <br>
                 </div>
+              </div>
+              <br>
+              <br>
             </div>
         </div>
     </div>
-</div>
+</section>
 @endsection

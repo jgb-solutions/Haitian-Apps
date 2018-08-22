@@ -1,28 +1,12 @@
 <script>
-$(document).ready(function() {
-  	$('.summernote').summernote({
- 		lang: 'fr-FR',
- 		toolbar: [
-         // [groupName, [list of button]]
-         ['style', ['bold', 'italic', 'underline', 'clear']],
-         ['font', ['strikethrough', 'superscript', 'subscript']],
-         ['fontsize', ['fontsize']],
-         ['color', ['color']],
-         ['para', ['ul', 'ol', 'paragraph']],
-         ['height', ['height']],
-         ['table', ['table']]
-       ]
-  	});
-});
-
 // jQuery to collapse the navbar on scroll
-  function collapseNavbar() {
-      if ($(".navbar").offset().top > 50) {
-          $(".navbar-fixed-top").addClass("top-nav-collapse");
-      } else {
-          $(".navbar-fixed-top").removeClass("top-nav-collapse");
-      }
-  }
+  // function collapseNavbar() {
+  //     if ($(".navbar").offset().top > 50) {
+  //         $(".navbar-fixed-top").addClass("top-nav-collapse");
+  //     } else {
+  //         $(".navbar-fixed-top").removeClass("top-nav-collapse");
+  //     }
+  // }
 
   // $(window).scroll(collapseNavbar);
 
@@ -40,12 +24,26 @@ $(document).ready(function() {
   // });
   //
 
-  // sidenav
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
-
   // Closes the Responsive Menu on Menu Item Click
+
+$(document).ready(function() {
+    // $('.summernote').summernote({
+    // lang: 'fr-FR',
+    // toolbar: [
+    //      // [groupName, [list of button]]
+    //      ['style', ['bold', 'italic', 'underline', 'clear']],
+    //      ['font', ['strikethrough', 'superscript', 'subscript']],
+    //      ['fontsize', ['fontsize']],
+    //      ['color', ['color']],
+    //      ['para', ['ul', 'ol', 'paragraph']],
+    //      ['height', ['height']],
+    //      ['table', ['table']]
+    //    ]
+    // });
+
+  // sidenav
+  $('.sidenav').sidenav();
+
   $('.navbar-collapse ul li a').click(function() {
       if ($(this).attr('class') != 'dropdown-toggle active' && $(this).attr('class') != 'dropdown-toggle') {
       $('.navbar-toggle:visible').click();
@@ -54,13 +52,13 @@ $(document).ready(function() {
 
   // carousel
   $('.carousel.carousel-slider').carousel({
-  fullWidth: true,
-  indicators: true
-});
-// slider
- $(document).ready(function(){
-    $('.slider').slider();
+    fullWidth: true,
+    indicators: true
   });
+  // slider
+  $('.slider').slider();
 
-
+  // dropdown trigger
+  $(".dropdown-trigger").dropdown();
+});
 </script>

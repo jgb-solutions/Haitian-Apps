@@ -9571,3 +9571,7 @@ input[type=range]::-ms-thumb {
   padding-bottom: 30px;
 }
 
+.uppercase-text {
+  text-transform: uppercase;
+}
+

@@ -22,3 +22,17 @@
 		<i class="material-icons left white-text">email</i>Contact
 	</a>
 </li>
+
+@guest
+	<li>
+		<a class="waves-effect waves-light blue" href="/login">
+			<i class="material-icons left">person</i> Join
+		</a>
+	</li>
+@else
+<li>
+	<a href="/me" class="waves-effect waves-light blue center-align">
+		<i class="material-icons left">person_pin</i> {{auth()->user()->first_name}}
+	</a>
+</li>
+@endguest

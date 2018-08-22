@@ -7,6 +7,10 @@ Route::get('/categories', 'PagesController@categories');
 Route::get('/about', 'PagesController@about');
 Route::get('/contact', 'PagesController@contact');
 
+// Social Login
+Route::get('/auth/{provider}', 'Auth\AuthController@redirectToProvider')->name('auth.provider');
+Route::get('/auth/{provider}/handle', 'Auth\AuthController@handleProvider')->name('auth.facebook.handle');
+
 // works
 Route::get('/works/{team}', 'WorksController@show')->name('works.show');
 Route::get('/works', 'WorksController@index')->name('works.index');
