@@ -3,7 +3,7 @@
 @section('navbar')@endsection
 
 @section('content')
-<section class="section blue white-text pt_30">
+<section class="section blue white-text pt_30" id="login-section">
     <div class="container">
         <div class="row">
             <div class="col s12 m6 offset-m3">

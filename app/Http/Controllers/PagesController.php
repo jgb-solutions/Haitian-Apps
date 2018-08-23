@@ -11,10 +11,10 @@ class PagesController extends Controller
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+    public function __construct()
+    {
+        $this->middleware('guest')->only('login');
+    }
 
     /**
      * Show the application dashboard.
@@ -46,6 +46,13 @@ class PagesController extends Controller
     {
         return view('pages.contact', [
             'title' => "Let's Get In Touch"
+        ]);
+    }
+
+    public function login()
+    {
+        return view('auth.login', [
+            'title' => "Join us"
         ]);
     }
 }

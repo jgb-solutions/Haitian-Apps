@@ -9575,3 +9575,15 @@ input[type=range]::-ms-thumb {
   text-transform: uppercase;
 }
 
+#login-section {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#87e0fd+0,4697c9+40,0459a3+100 */
+  background: #87e0fd;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, #87e0fd 0%, #4697c9 40%, #0459a3 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#0459a3',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+}
+

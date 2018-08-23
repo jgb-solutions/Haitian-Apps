@@ -1,10 +1,12 @@
 <?php
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/', 'PagesController@home');
 Route::get('/categories', 'PagesController@categories');
 Route::get('/about', 'PagesController@about');
+Route::get('/login', 'PagesController@login')->name('login');
+Route::get('/logout', 'Auth\AuthController@logout')->name('logout');
 Route::get('/contact', 'PagesController@contact');
 
 // Social Login
@@ -20,15 +22,13 @@ Route::get('/categories/{team}', 'AdminController@categories_show')->name('categ
 // Route::get('/categories', 'AdminController@categories_index')->name('categories.index');
 
 // admin stuff
-Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function() {
-	Route::get('/', 'AdminController@index')->name('index');
-
+Route::middleware(['auth'])->group(function() {
 	// Users
-	Route::post('/@{user}', 'AdminController@user_store')->name('user.store');
-	Route::get('/@{user}/edit', 'AdminController@user_edit')->name('user.edit');
-	Route::post('/@{user}', 'AdminController@user_store')->name('user.store');
-	Route::put('/@{user}', 'AdminController@user_update')->name('user.update');
-	Route::delete('/@{user}/{work}', 'AdminController@user_delete')->name('user.delete');
+	Route::get('/me', 'UsersController@index')->name('profile');
+	Route::get('/me/edit', 'UsersController@edit')->name('profile.edit');
+	Route::post('/me', 'UsersController@store')->name('profile.store');
+	Route::put('/me', 'UsersController@update')->name('profile.update');
+	Route::delete('/me/{work}', 'UsersController@delete')->name('profile.delete');
 
 	// Works
 	Route::get('/works/create', 'AdminController@works_create')->name('works.create');

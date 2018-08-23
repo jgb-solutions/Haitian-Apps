@@ -32,7 +32,17 @@
 @else
 <li>
 	<a href="/me" class="waves-effect waves-light blue center-align">
-		<i class="material-icons left">person_pin</i> {{auth()->user()->first_name}}
+		@if (auth()->user()->avatar)
+			{{-- <img src="{{auth()->user()->avatar}}" class="responsive-img" width="50px"> --}}
+		@else
+			<i class="material-icons left">person_pin</i>
+		@endif
+		{{auth()->user()->name}}
+	</a>
+</li>
+<li>
+	<a href="/logout" class="waves-effect waves-light btn red center-align">
+			<i class="material-icons">power_settings_new</i>
 	</a>
 </li>
 @endguest

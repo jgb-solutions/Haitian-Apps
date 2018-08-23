@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Requests\RegisterFormRequest;
-use Tymon\JWTAuth\Exceptions\JWTException;
+use Laravel\Socialite\Two\InvalidStateException;
 
 class AuthController extends Controller
 {
@@ -63,9 +63,9 @@ class AuthController extends Controller
      */
     public function logout()
     {
-        auth()->guard('api')->logout(true);
+        auth()->logout(true);
 
-        return response()->json(['message' => 'Successfully logged out']);
+        return redirect('/');
     }
 
     /**
@@ -88,11 +88,10 @@ class AuthController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-	public function handleProvider()
+	public function handleProvider($provider, Request $request)
 	{
 		try {
-			$provider_user = Socialite::driver('facebook')->user();
-			dd($provider_user->getAvatar());
+			$provider_user = Socialite::driver($provider)->user();
 			// for example we might do something like... Check if a user exists with the email and if so, log them in.
 			// $user = User::where()
 			// $user = User::orWhere('email', $provider_user->email)->firstOrCreate([
@@ -103,53 +102,51 @@ class AuthController extends Controller
 			// 	'facebook_link' 	=> $provider_user->profileUrl
 			// ]);
 
-			$user = User::where('facebook_id', $provider_user->id)->orWhere('email', $provider_user->email)->first();
+			$providerId = $provider . '_id';
+			$providerLink = $provider . '_link';
+
+			$user = User::where('email', $provider_user->getEmail())
+							->orWhere($providerId, $provider_user->getId())
+							->first();
 
 			if ($user) {
-				if (empty($user->facebook_id)) {
-					$user->facebook_id = $provider_user->id;
+				if (empty($user->email)) {
+					$user->email = $provider_user->getEmail();
 				}
 
 				if (empty($user->name)) {
-					$user->name = $provider_user->name;
+					$user->name = $provider_user->getName();
+				}
+
+				if (empty($user->{$providerId})) {
+					$user->{$providerId} = $provider_user->getId();
+				}
+
+				if (empty($user->{$providerLink})) {
+					$user->{$providerLink} = $provider_user->profileUrl;
 				}
 
 				if (empty($user->avatar)) {
-					$user->avatar = $provider_user->avatar;
+					$user->avatar = $provider_user->getAvatar();
 				}
 
-				if (empty($user->facebook_link)) {
-					$user->facebook_link = $provider_user->profileUrl;
-				}
-
-				$user->save();
 			} else {
 				$user = User::create([
-					'facebook_id' 		=> $provider_user->id,
-					'name' 				=> $provider_user->name,
-					'avatar' 			=> $provider_user->avatar,
-					'facebook_link' 	=> $provider_user->profileUrl
+					'name' 			=> $provider_user->getName(),
+					'email'			=> $provider_user->getEmail(),
+					'avatar' 		=> $provider_user->getAvatar(),
+					$providerId 	=> $provider_user->getId(),
+					$providerLink 	=> $provider_user->profileUrl
 				]);
+
 			}
 
-			$first_login = false;
-
-			if ($user->firstLogin) {
-				$user->first_login = true;
-				$first_login = true;
-
-				$user->save();
-			}
-
-			$token = auth()->login($user);
-
-			return response()->json([
-			    'token'			=> $token,
-			    'user' 			=> new UserResource($user),
-			    'firstLogin' 	=> (boolean) $first_login
-			]);
-		} catch (\GuzzleHttp\Exception\ClientException $e) {
-			return response()->json(['message' => 'Nou pa rive konekte w ak Facebook, tanpri eseye ankò'], 500);
+			auth()->login($user);
+			return redirect()->intended(route('profile'));
+			dd($user);
+		} catch (InvalidStateException $e) {
+			return redirect(route('login'))
+				->with('message', 'There was a problem logging you in.');
 		}
 	}
 
