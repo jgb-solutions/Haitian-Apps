@@ -24,6 +24,12 @@ class CreateUsersTable extends Migration
             $table->string('google_id', 16)->unique()->nullable();
             $table->string('facebook_link')->nullable();
             $table->string('google_link')->nullable();
+            $table->string('youtube_link')->nullable();
+            $table->string('github_link')->nullable();
+            $table->string('twitter_link')->nullable();
+            $table->string('linkedin_link')->nullable();
+            $table->string('instagram_link')->nullable();
+            $table->string('whatsapp_link')->nullable();
             $table->string('telephone', 20)->nullable();
             // $table->boolean('active')->default(false);
             $table->string('password_reset_code')->nullable();

@@ -32,12 +32,8 @@
 @else
 <li>
 	<a href="/me" class="waves-effect waves-light blue center-align">
-		@if (auth()->user()->avatar)
-			{{-- <img src="{{auth()->user()->avatar}}" class="responsive-img" width="50px"> --}}
-		@else
-			<i class="material-icons left">person_pin</i>
-		@endif
-		{{auth()->user()->name}}
+		<i class="fa fa-user fa-2x"></i>
+		{{auth()->user()->first_name}}
 	</a>
 </li>
 <li>

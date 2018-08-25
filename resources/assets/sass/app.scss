@@ -36,6 +36,10 @@
     margin-bottom: -20px;
 }
 
+.no-mt {
+    margin-top: 0;
+}
+
 .sidenav-overlay {
     z-index: 996 !important;
 }
@@ -86,3 +90,13 @@ background: -webkit-radial-gradient(center, ellipse cover, #87e0fd 0%,#4697c9 40
 background: radial-gradient(ellipse at center, #87e0fd 0%,#4697c9 40%,#0459a3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#0459a3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
+
+.profile-user-info img {
+    border: 2px solid white;
+}
+
+// .fixed-action-btn {
+//   position: fixed;
+//   left: 39px;
+//   top: 43px;
+// }

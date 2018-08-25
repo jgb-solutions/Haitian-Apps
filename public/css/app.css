@@ -9533,6 +9533,10 @@ input[type=range]::-ms-thumb {
   margin-bottom: -20px;
 }
 
+.no-mt {
+  margin-top: 0;
+}
+
 .sidenav-overlay {
   z-index: 996 !important;
 }
@@ -9585,5 +9589,9 @@ input[type=range]::-ms-thumb {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#0459a3',GradientType=1 );
   /* IE6-9 fallback on horizontal gradient */
+}
+
+.profile-user-info img {
+  border: 2px solid white;
 }
 

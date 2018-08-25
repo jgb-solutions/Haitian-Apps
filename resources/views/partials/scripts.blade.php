@@ -43,6 +43,7 @@ $(document).ready(function() {
 
   // sidenav
   $('.sidenav').sidenav();
+  // $('.profile-sidenav').sidenav();
 
   $('.navbar-collapse ul li a').click(function() {
       if ($(this).attr('class') != 'dropdown-toggle active' && $(this).attr('class') != 'dropdown-toggle') {

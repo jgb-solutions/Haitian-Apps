@@ -8,6 +8,8 @@ class UsersController extends Controller
 {
 	public function index()
 	{
-		return 'profile page displaying user\'s information';
+		return view('users.index', [
+            'title' => 'Your Profile'
+        ]);
 	}
 }

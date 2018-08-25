@@ -21,9 +21,11 @@
         "react-dom": "^16.2.0"
     },
     "dependencies": {
+        "font-awesome": "^4.7.0",
         "materialize-css": "^1.0.0-rc.2",
         "prop-types": "^15.6.2",
         "react-bootstrap": "^0.32.1",
-        "react-router-dom": "^4.3.1"
+        "react-router-dom": "^4.3.1",
+        "sweetalert": "^2.1.0"
     }
 }

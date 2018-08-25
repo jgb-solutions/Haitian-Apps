@@ -25,6 +25,8 @@ Route::get('/categories/{team}', 'AdminController@categories_show')->name('categ
 Route::middleware(['auth'])->group(function() {
 	// Users
 	Route::get('/me', 'UsersController@index')->name('profile');
+	Route::get('/me/works', 'UsersController@works')->name('users.works');
+	Route::get('/me/works/add', 'UsersController@works')->name('users.works.add');
 	Route::get('/me/edit', 'UsersController@edit')->name('profile.edit');
 	Route::post('/me', 'UsersController@store')->name('profile.store');
 	Route::put('/me', 'UsersController@update')->name('profile.update');
