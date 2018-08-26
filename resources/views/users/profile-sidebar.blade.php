@@ -47,7 +47,7 @@
 <ul class="collection no-mt">
     <li class="collection-item">
         <a href="{{route('users.works')}}" class="black-text">
-            <i class="fa fa-suitcase"></i> My Works
+            <i class="fa fa-suitcase"></i> @lang('text.profile.works')
         </a>
     </li>
     <li class="collection-item">

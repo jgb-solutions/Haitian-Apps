@@ -9,7 +9,7 @@ class UsersController extends Controller
 	public function index()
 	{
 		return view('users.index', [
-            'title' => 'Your Profile'
+            'title' => trans('text.profile.works')
         ]);
 	}
 }

@@ -22,7 +22,7 @@
               </div>
 
               <div class="col m8 s12">
-                <h4 class="no-mt"><i class="fa fa-suitcase"></i> Your Latest Works</h4>
+                <h4 class="no-mt"><i class="fa fa-suitcase"></i> {{$title}}</h4>
 
                 <div class="row">
                     @foreach (range(1, 4) as $stuff)
