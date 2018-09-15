@@ -64,10 +64,8 @@
     @include('partials.footer')
 
 <!--JavaScript at end of body for optimized loading-->
-    <!-- <script src="/assets/dist/js/jquery.min.js"></script> -->
     <script src="{{ asset('js/vendor.js') }}"></script>
-    <script src="{{ asset('js/materialize.js') }}"></script>
-     {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+     <script src="{{ asset('js/app.js') }}"></script>
      @include('partials.scripts')
 </body>
 </html>

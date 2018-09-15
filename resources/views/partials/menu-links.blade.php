@@ -37,7 +37,7 @@
 	</a>
 </li>
 <li>
-	<a href="/logout" class="waves-effect waves-light btn red center-align">
+	<a href="/logout" class="waves-effect waves-light red center-align">
 			<i class="material-icons">power_settings_new</i>
 	</a>
 </li>

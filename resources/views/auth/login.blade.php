@@ -69,12 +69,18 @@
                         </div>
                     </form> --}}
                     <div class="social-buttons">
-                        <a class="waves-effect waves-light btn-large blue darken-4" href="{{route('auth.provider', 'facebook')}}">
-                            <i class="fa fa-facebook"></i> Facebook
-                        </a>
-                        <a class="waves-effect waves-light btn-large red darken-1" href="{{route('auth.provider', 'google')}}">
-                            <i class="fa fa-google-plus"></i> Google+
-                        </a>
+                        <div class="row">
+                            <div class="col s6">
+                                <a class="waves-effect waves-light btn-large blue darken-4" href="{{route('auth.provider', 'facebook')}}">
+                                    <i class="fa fa-facebook"></i> Facebook
+                                </a>
+                            </div>
+                            <div class="col s6">
+                                <a class="waves-effect waves-light btn-large red darken-1" href="{{route('auth.provider', 'google')}}">
+                                    <i class="fa fa-google-plus"></i> Google+
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <br>
                     <br>

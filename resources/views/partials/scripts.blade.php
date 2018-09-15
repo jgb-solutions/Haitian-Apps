@@ -1,3 +1,5 @@
+@include('sweet::alert')
+
 <script>
 // jQuery to collapse the navbar on scroll
   // function collapseNavbar() {

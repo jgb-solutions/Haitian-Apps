@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email', 60)->unique()->nullable();
+            $table->string('profession')->nullable();
             $table->string('password', 60)->nullable();
             $table->string('avatar')->nullable();
             $table->boolean('admin')->default(false);
@@ -30,6 +31,7 @@ class CreateUsersTable extends Migration
             $table->string('linkedin_link')->nullable();
             $table->string('instagram_link')->nullable();
             $table->string('whatsapp_link')->nullable();
+            $table->string('website')->nullable();
             $table->string('telephone', 20)->nullable();
             // $table->boolean('active')->default(false);
             $table->string('password_reset_code')->nullable();

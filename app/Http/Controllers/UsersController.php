@@ -12,4 +12,11 @@ class UsersController extends Controller
             'title' => trans('text.profile.works')
         ]);
 	}
+
+	public function edit()
+	{
+		return view('users.edit', [
+            'title' => trans('text.profile.edit')
+        ]);
+	}
 }

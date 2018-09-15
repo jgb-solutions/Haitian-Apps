@@ -65,6 +65,8 @@ class AuthController extends Controller
     {
         auth()->logout(true);
 
+        alert()->success('You have been logged out.', 'Good bye!');
+
         return redirect('/');
     }
 
@@ -142,11 +144,14 @@ class AuthController extends Controller
 			}
 
 			auth()->login($user);
+
+			alert()->success("You've been successfully logged in.");
+
 			return redirect()->intended(route('profile'));
-			dd($user);
 		} catch (InvalidStateException $e) {
-			return redirect(route('login'))
-				->with('message', 'There was a problem logging you in.');
+			alert()->warning('There was a problem logging you in.');
+
+			return redirect(route('login'));
 		}
 	}
 

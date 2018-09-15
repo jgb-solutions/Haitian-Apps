@@ -15,33 +15,31 @@
 				<p class="right-align grey-text hide-on-small-only">
 					Follow Us on Social Media &nbsp;
 					<a
-						href="{{ config('site.social.github') }}"
-						target="blank"
+						href="{{ config('site.social.facebook') }}"
+						target="blank" title="Like us on Facebook"
 						class="btn-floating blue">
-						<i class="fa fa-github fa-fw"></i>
+						<i class="fa fa-facebook fa-fw"></i>
 					</a>
 					&nbsp;
 					<a
-						href="{{ config('site.social.facebook') }}"
-						target="blank"
+						href="{{ config('site.social.github') }}"
+						target="blank" title="Follow us on Github"
 						class="btn-floating blue">
-						<i class="fa fa-facebook fa-fw"></i>
+						<i class="fa fa-github fa-fw"></i>
 					</a>
 				</p>
 				<p class="center-align grey-text hide-on-med-and-up">
 					Follow Us on Social Media <br>
-					<a
-						href="{{ config('site.social.github') }}"
-						target="blank"
-						class="btn-floating blue">
-						<i class="fa fa-github fa-fw"></i>
-					</a>
-					&nbsp;
-					<a
+					<a	target="blank" title="Like us on Facebook"
 						href="{{ config('site.social.facebook') }}"
-						target="blank"
 						class="btn-floating blue">
 						<i class="fa fa-facebook fa-fw"></i>
+					</a>
+					&nbsp;
+					<a target="blank" title="Follow us on Github"
+						href="{{ config('site.social.github') }}"
+						class="btn-floating blue">
+						<i class="fa fa-github fa-fw"></i>
 					</a>
 				</p>
 			</div>
