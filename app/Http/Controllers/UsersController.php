@@ -16,7 +16,15 @@ class UsersController extends Controller
 	public function edit()
 	{
 		return view('users.edit', [
-            'title' => trans('text.profile.edit')
+            'title' => trans('text.profile.edit'),
+            'user' => auth()->user()
         ]);
+	}
+
+	public function update(Request $request)
+	{
+		$user_data = $request->validate([
+			'name' => 'number'
+		]);
 	}
 }

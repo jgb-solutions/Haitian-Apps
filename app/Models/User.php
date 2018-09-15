@@ -38,4 +38,17 @@ class User extends Authenticatable
     {
          return trim(explode(' ', $this->name)[0]);
     }
+
+    public function has_any_links()
+    {
+        return $this->facebook || $this->twitter ||
+            $this->github || $this->linkedin ||
+            $this->instagram || $this->youtube ||
+            $this->email;
+    }
+
+    public function getEmailUrlAttribute()
+    {
+        return "mailto:{$this->email}";
+    }
 }

@@ -23,8 +23,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{config('site.description')}}">
     <meta name="author" content="Jean Gérard Bousiquot">
-    <meta name="keywords" content="Web,Mobile,HTML,CSS,XML,JavaScript,PHP,MySQL,Laravel,Vue,Angular,React,Ionic,WordPress,Linux,Ubuntu,Sublime Text, Visual Studio Code,Java,Node,Express,Nginx,Jekyll">
-
+    <meta name="keywords" content="Web,Mobile,HTML,`S,XML,JavaScript,PHP,MySQL,Laravel,Vue,Angular,React,Ionic,WordPress,Linux,Ubuntu,Sublime Text, Visual Studio Code,Java,Node,Express,Nginx,Jekyll">
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:site" content="@{{config('site.twitter}}" />
     <meta name="twitter:creator" content="@{{config('site.twitter}}"/>
