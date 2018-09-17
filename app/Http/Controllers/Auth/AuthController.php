@@ -143,7 +143,7 @@ class AuthController extends Controller
 
 			}
 
-			auth()->login($user);
+			auth()->guard('web')->login($user);
 
 			alert()->success("You've been successfully logged in.");
 

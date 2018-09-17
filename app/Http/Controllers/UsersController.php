@@ -24,7 +24,7 @@ class UsersController extends Controller
 	public function update(Request $request)
 	{
 		$user_data = $request->validate([
-			'name' => 'number'
+			'name' => 'numeric'
 		]);
 	}
 }

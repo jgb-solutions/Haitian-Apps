@@ -33,5 +33,11 @@ return [
 		'website_placeholder' => "Enter Your Website link",
 		'website' => "Website",
 		'bio_placeholder' => "Enter Your Biography",
+	],
+	'auth' => [
+		'required' => [
+			'title' => "Permission Denied!",
+			'text' => "You must be connected to access this page."
+		]
 	]
 ];
