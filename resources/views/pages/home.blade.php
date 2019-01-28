@@ -8,7 +8,7 @@
       <li>
         <img src="https://picsum.photos/580/250/?image=900"> <!-- random image -->
         <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
+          <h3>This is our big like yeah!</h3>
           <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
         </div>
       </li>
